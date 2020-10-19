@@ -1,0 +1,8 @@
+<h3>Below are all the tags currently active</h3>
+
+<ul>
+  <% @tags.each do |tag| %>
+    <li><%= link_to tag.name, tag_path(tag) %> - 
+    <%= link_to "Delete", tag_path(tag), method: :delete, data: { confirm: 'Really delete this tag?' } %></li>
+  <% end %>
+</ul>

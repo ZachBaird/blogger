@@ -2,6 +2,13 @@
 <hr />
 <p><%= @article.body %></p>
 <br />
+<p>
+  Tags:
+  <% @article.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
+<br />
 <%= render partial: 'comments/form' %>
 <br />
 <%= link_to "<< Back to Articles", articles_path %>
